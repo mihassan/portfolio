@@ -1,0 +1,141 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #0066cc;
+  --secondary-text: #666666;
+  --border-color: #eaeaea;
+  --font-main: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --accent-color: #66b3ff;
+    --secondary-text: #aaaaaa;
+    --border-color: #333333;
+  }
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.brand a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--secondary-text);
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-color);
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+article .content, .list .content {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.list li {
+  margin-bottom: 1rem;
+}
+
+.list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.list li a:hover {
+  border-bottom-color: var(--border-color);
+  text-decoration: none;
+}
+
+.list .date {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  font-family: var(--font-main);
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+}
+
+/* Poems specific styling */
+article .content p {
+  white-space: pre-line; /* Preserve line breaks for poems */
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="archive-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
+  <header class="page-hero">
+    <p class="eyebrow">{{ .Params.eyebrow | default "Archive" }}</p>
+    <h1>{{ .Params.heading | default .Title }}</h1>
+    {{ with .Params.description }}<p class="page-hero__dek">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose archive-intro">{{ . }}</div>{{ end }}
+  <div class="entry-list">
+    {{ range .Pages.ByWeight }}
+    <article><p>{{ .Params.eyebrow | default "Note" }}</p><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ with .Params.description }}<p>{{ . }}</p>{{ end }}<a href="{{ .RelPermalink }}">Read more <span aria-hidden="true">→</span></a></article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

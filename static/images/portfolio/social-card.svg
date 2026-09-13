@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img">
+<title>Md Imrul Hassan — engineer, researcher and maker</title>
+<desc>The Confluence identity beside the name Md Imrul Hassan and three intersecting currents.</desc>
+<defs><clipPath id="mark-field"><rect x="61.5" y="59.5" width="81" height="81" rx="21"/></clipPath></defs>
+<rect width="1200" height="630" fill="#F7F4EF"/>
+<rect x="58.5" y="56.5" width="87" height="87" rx="24" fill="#E8EFEA" stroke="#0F5F59" stroke-width="7.5"/>
+<g clip-path="url(#mark-field)"><path d="M46.5 86.5C67.5 70 87 74.5 102 92.5s30 24 55.5 1.5" fill="none" stroke="#8FC1B4" stroke-width="12" stroke-linecap="round"/><path d="M45 124c21-27 40.5-6 58.5-1.5 19.5 4.5 31.5-3 54-27" fill="none" stroke="#0F5F59" stroke-width="16.5" stroke-linecap="round"/><path d="M90 157c-1.5-24 7.5-37.5 24-43.5 15-6 16.5-18 19.5-33 1.5-10.5 7.5-18 18-25.5" fill="none" stroke="#D98462" stroke-width="9" stroke-linecap="round"/></g>
+<text x="58" y="288" font-family="Georgia,serif" font-size="75" font-weight="700" fill="#172421">Md Imrul Hassan</text>
+<text x="61" y="352" font-family="Arial,sans-serif" font-size="38" font-weight="600" fill="#0F5F59">Engineer · Researcher · Maker</text>
+<text x="61" y="550" font-family="Arial,sans-serif" font-size="36" font-weight="600" fill="#4B5A56">mihassan.com</text>
+<path d="M770 688c18-174 85-274 201-308 84-25 147-88 183-189" fill="none" stroke="#0F5F59" stroke-width="74" stroke-linecap="round"/>
+<path d="M746 98c112-52 205-28 279 57 52 60 109 81 185 62" fill="none" stroke="#8FC1B4" stroke-width="39" stroke-linecap="round"/>
+<path d="M899 664c-7-120 34-211 123-271 55-37 95-87 119-148" fill="none" stroke="#D98462" stroke-width="24" stroke-linecap="round"/>
+</svg>

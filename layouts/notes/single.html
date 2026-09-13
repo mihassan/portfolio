@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="note-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><a href="{{ "/notes/" | relURL }}">Notes</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
+  <header class="page-hero page-hero--reading note-hero">
+    <p class="eyebrow">{{ .Params.eyebrow | default "Note" }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-hero__dek">{{ . }}</p>{{ end }}
+  </header>
+  <div class="reading-layout note-reading">
+    <div class="prose prose--note">{{ .Content }}</div>
+    <aside class="reading-rail" aria-label="Continue reading">
+      <p>Continue reading</p>
+      <a href="{{ "/notes/" | relURL }}">All notes <span aria-hidden="true">→</span></a>
+      <a href="{{ "/work/" | relURL }}">Work <span aria-hidden="true">→</span></a>
+      <a href="{{ "/about/" | relURL }}">About <span aria-hidden="true">→</span></a>
+    </aside>
+  </div>
+  <nav class="page-neighbours" aria-label="More notes"><a href="{{ "/notes/" | relURL }}">← All notes</a>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">Next: {{ .Title }} →</a>{{ end }}</nav>
+</article>
+{{ end }}

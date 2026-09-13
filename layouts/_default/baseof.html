@@ -1,0 +1,15 @@
+<!doctype html>
+{{- $pageLang := .Site.Language.Locale | default "en-US" -}}
+{{- if and (eq .Section "poems") (not .IsSection) }}{{ $pageLang = "bn" }}{{ end -}}
+<html lang="{{ $pageLang }}">
+  {{ partial "head.html" . }}
+  <body class="{{ if .IsHome }}page-home{{ else }}page-inner{{ end }}{{ if eq .Section "poems" }} page-poem{{ end }}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {{ partial "header.html" . }}
+    <main id="main-content" class="site-main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="{{ "js/site.js" | relURL }}" defer></script>
+  </body>
+</html>

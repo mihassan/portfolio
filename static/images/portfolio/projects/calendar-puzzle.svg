@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+<title>Calendar Puzzle abstract illustration</title><desc>Interlocking geometric pieces surround two open calendar cells.</desc>
+<rect width="640" height="400" rx="24" fill="#F0E9DF"/>
+<rect x="126" y="60" width="388" height="280" rx="24" fill="#E8EFEA" stroke="#0F5F59" stroke-width="12"/>
+<path d="M126 132h116V60h82v136h-72v72H126z" fill="#0F5F59"/>
+<path d="M324 60h190v96h-68v62H324z" fill="#8FC1B4"/>
+<path d="M252 196h72v72h92v72H252z" fill="#D98462"/>
+<path d="M416 218h98v122h-98v-54h-56v-68z" fill="#0F5F59"/>
+<rect x="169" y="285" width="50" height="50" rx="10" fill="#F0E9DF" stroke="#8FC1B4" stroke-width="8"/>
+<rect x="361" y="112" width="50" height="50" rx="10" fill="#F0E9DF" stroke="#D98462" stroke-width="8"/>
+</svg>

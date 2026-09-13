@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img">
+<title>Curving paths in an open field</title>
+<desc>Three asymmetric curved bands cross a warm field, suggesting exploration and connected ideas.</desc>
+<rect width="800" height="600" rx="36" fill="#E8EFEA"/>
+<path d="M-90 492C82 306 198 342 309 425c108 81 211 103 318-10 68-72 117-166 258-143" fill="none" stroke="#0F5F59" stroke-width="78" stroke-linecap="round"/>
+<path d="M-45 177C112 72 245 75 343 181c72 77 147 142 247 116 89-23 123-92 247-77" fill="none" stroke="#8FC1B4" stroke-width="40" stroke-linecap="round"/>
+<path d="M164 638c9-153 63-250 156-290 90-38 183-14 227-116 31-73 15-135 75-213" fill="none" stroke="#D98462" stroke-width="24" stroke-linecap="round"/>
+<circle cx="622" cy="84" r="13" fill="#0F5F59"/>
+</svg>

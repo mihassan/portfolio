@@ -1,0 +1,13 @@
+<header>
+    <div class="brand">
+        <a href="{{ " /" | relURL }}">{{ .Site.Title }}</a>
+    </div>
+    <nav>
+        <ul>
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL | relURL }}" class="{{ if or (eq $.RelPermalink .URL) (and (eq .URL " /poems/") (eq
+                    $.Section "poems" )) }}active{{ end }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

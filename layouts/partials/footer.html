@@ -1,0 +1,16 @@
+<footer class="site-footer" lang="en-US">
+  <div class="site-footer__inner shell">
+    <a class="site-footer__brand" href="{{ "/" | relURL }}" aria-label="Md Imrul Hassan — home">
+      <img src="{{ "images/portfolio/mark.svg" | relURL }}" width="52" height="52" alt="">
+      <span><strong>Md Imrul Hassan</strong><small>{{ .Site.Params.tagline }}</small></span>
+    </a>
+    <nav class="site-footer__links" aria-label="Featured profiles and writing">
+      <a href="{{ "/notes/" | relURL }}">Notes<span aria-hidden="true">→</span></a>
+      {{ range first 4 (where hugo.Data.profiles "featured" true) }}
+        <a href="{{ .url }}" rel="me noopener noreferrer" target="_blank">{{ .name }}<span aria-hidden="true">↗</span></a>
+      {{ end }}
+      <a href="{{ "/elsewhere/" | relURL }}">All profiles<span aria-hidden="true">→</span></a>
+    </nav>
+    <p class="site-footer__meta">© <span data-current-year>{{ now.Format "2006" }}</span> Md Imrul Hassan<br>Built as a quiet corner of the open web.</p>
+  </div>
+</footer>

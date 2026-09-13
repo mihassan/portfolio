@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="home">
+    <h1>Welcome</h1>
+    <div class="content">
+        {{ .Content }}
+    </div>
+    <!-- If homepage has no content, we might want to show recent posts or just redirect/link to About -->
+    <!-- For now, we'll assume the user might put content in _index.md of root, or we can list sections -->
+</section>
+{{ end }}

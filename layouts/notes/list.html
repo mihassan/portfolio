@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="notes-archive shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Notes</span></nav>
+  <header class="page-hero page-hero--notes">
+    <p class="eyebrow">{{ .Params.eyebrow | default "Notes" }}</p>
+    <h1>{{ .Params.heading | default .Title }}</h1>
+    {{ with .Params.description }}<p class="page-hero__dek">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Content }}<div class="prose archive-intro">{{ . }}</div>{{ end }}
+  <ol class="notes-list" data-notes-list>
+    {{ range .Pages.ByWeight }}
+    <li>
+      <article data-note-entry="{{ .File.ContentBaseName }}">
+        <div class="notes-list__meta"><span aria-hidden="true">{{ printf "%02d" .Weight }}</span><p>{{ .Params.eyebrow | default "Note" }}</p></div>
+        <div>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+          <a class="note-card__link" href="{{ .RelPermalink }}">Read the note <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

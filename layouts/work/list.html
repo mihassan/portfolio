@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="work-archive shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Work</span></nav>
+  <header class="page-hero page-hero--split">
+    <div><p class="eyebrow">{{ .Params.eyebrow }}</p><h1>{{ .Params.heading | default .Title }}</h1><p class="page-hero__dek">{{ .Params.description }}</p></div>
+    <img src="{{ "images/portfolio/work-abstract.svg" | relURL }}" width="640" height="400" alt="">
+  </header>
+  {{ with .Content }}<div class="prose archive-intro">{{ . }}</div>{{ end }}
+  {{- $listed := where .Pages "Params.listed" true -}}
+  <div class="work-list" data-work-list>
+    {{ range $listed.ByWeight }}
+    {{- $project := . -}}
+    <article class="work-card" data-work-project="{{ .File.ContentBaseName }}">
+      {{ with .Params.image }}<a class="work-card__visual" href="{{ $project.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . | relURL }}" width="640" height="400" alt=""></a>{{ end }}
+      <div class="work-card__body">
+        <p class="project-card__kind">{{ .Params.eyebrow }}</p>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with .Params.status }}<p class="project-status"><span>Status</span>{{ . }}</p>{{ end }}
+        <p>{{ .Params.description }}</p>
+        {{ with .Params.stack }}<ul class="tag-list" aria-label="Project technologies and themes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        <div class="project-card__links"><a href="{{ .RelPermalink }}">Project note <span aria-hidden="true">→</span></a>{{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}</div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+<title>Crystal Cave abstract illustration</title><desc>Faceted cavern walls frame a bright crystal and a curling current of energy.</desc>
+<rect width="640" height="400" rx="24" fill="#13211F"/>
+<path d="M0 0h192l55 86-83 72 52 82-92 160H0z" fill="#0F5F59"/>
+<path d="M640 0H452l-58 93 78 67-42 93 80 147h130z" fill="#255F58"/>
+<path d="M90 0l104 81-70 70 65 79-89 107M550 0l-96 88 68 69-61 91 79 108" fill="none" stroke="#8FC1B4" stroke-width="18" stroke-linejoin="round" opacity=".82"/>
+<path d="M320 86l68 104-68 125-68-125z" fill="#8FC1B4"/>
+<path d="M320 86v229l-68-125z" fill="#E8EFEA"/>
+<path d="M320 86l68 104-68 18z" fill="#D98462"/>
+<path d="M121 314c68-59 119-41 165-15 48 28 92 29 133-14 31-32 64-36 108-11" fill="none" stroke="#D98462" stroke-width="20" stroke-linecap="round"/>
+<circle cx="123" cy="314" r="13" fill="#F0E9DF"/>
+</svg>

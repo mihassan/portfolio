@@ -1,0 +1,48 @@
+Licensing for mihassan.com
+
+Source code
+-----------
+
+Unless a file or third-party component states otherwise, the software source code
+in this repository is licensed under the MIT License below.
+
+MIT License
+
+Copyright (c) 2024-2026 Md Imrul Hassan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated software documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Content and original artwork
+----------------------------
+
+Copyright (c) 2024-2026 Md Imrul Hassan. All rights reserved.
+
+Unless a file explicitly states otherwise, the MIT License above does not apply
+to the original written content in `content/`, portfolio copy in `data/`, the
+Bangla poems, or the original portfolio artwork in `static/images/portfolio/`
+and `docs/favicon-concepts/` or `docs/favicon-symbol-concepts/`. No permission
+to reproduce, modify, publish, distribute, sublicense, or sell that content or
+artwork is granted by this repository.
+
+Third-party material
+--------------------
+
+Third-party software, source material, names, marks, and other works remain
+subject to their respective licenses and rights. This file does not replace or
+expand any third-party permission or license notice.

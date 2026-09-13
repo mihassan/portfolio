@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="poems-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Poems</span></nav>
+  <header class="page-hero"><p class="eyebrow">{{ .Params.eyebrow }}</p><h1>{{ .Params.heading | default .Title }}</h1><p class="page-hero__dek">{{ .Params.description }}</p></header>
+  <div class="prose archive-intro">{{ .Content }}</div>
+  <div class="poem-list" lang="bn">
+    {{ range .Pages.ByTitle }}<article><p lang="en">Original Bangla poem</p><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2><a href="{{ .RelPermalink }}">কবিতাটি পড়ুন <span aria-hidden="true">→</span></a></article>{{ end }}
+  </div>
+</section>
+{{ end }}

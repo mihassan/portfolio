@@ -1,0 +1,8 @@
+{{ define "main" }}
+<article class="poem-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb" lang="en"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><a href="{{ "/poems/" | relURL }}">Poems</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
+  <header class="poem-hero" lang="bn"><p class="eyebrow" lang="en">Original Bangla poem</p><h1>{{ .Title }}</h1></header>
+  <div class="poem-body" lang="bn">{{ .Content }}</div>
+  <nav class="page-neighbours" aria-label="More poems" lang="en"><a href="{{ "/poems/" | relURL }}">← All poems</a>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ else }}{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}{{ end }}</nav>
+</article>
+{{ end }}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="elsewhere-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Elsewhere</span></nav>
+  <header class="page-hero"><p class="eyebrow">{{ .Params.eyebrow }}</p><h1>{{ .Params.heading | default .Title }}</h1><p class="page-hero__dek">{{ .Params.description }}</p></header>
+  <div class="prose archive-intro">{{ .Content }}</div>
+  <div class="profile-groups">
+    {{ range (slice "Code & learning" "Music & words" "Images & everyday life") }}
+      {{- $group := . -}}{{- $items := where hugo.Data.profiles "group" $group -}}
+      <section aria-labelledby="profile-{{ $group | urlize }}"><h2 id="profile-{{ $group | urlize }}">{{ $group }}</h2><ul>{{ range $items }}<li><a href="{{ .url }}" target="_blank" rel="me noopener noreferrer"><span><strong>{{ .name }}</strong><small>{{ .note }}</small></span><i aria-hidden="true">↗</i></a></li>{{ end }}</ul></section>
+    {{ end }}
+  </div>
+  <p class="source-note">Only confirmed public profiles are included here. A quiet profile is described as quiet rather than presented as a body of work.</p>
+</section>
+{{ end }}

@@ -1,0 +1,52 @@
+- name: GitHub
+  url: https://github.com/mihassan
+  group: Code & learning
+  note: "Personal projects and experiments."
+  featured: true
+- name: Codeforces
+  url: https://codeforces.com/profile/mihassan
+  group: Code & learning
+  note: "Competitive programming and problem solving."
+- name: Codewars
+  url: https://www.codewars.com/users/mihassan
+  group: Code & learning
+  note: "Kata and programming-language practice."
+- name: HackerRank
+  url: https://www.hackerrank.com/profile/mihassan
+  group: Code & learning
+  note: "Programming challenges."
+- name: Kaggle
+  url: https://www.kaggle.com/mihassan
+  group: Code & learning
+  note: "My profile; not a showcase of substantial contributions."
+- name: SoundCloud
+  url: https://soundcloud.com/mdimrulhassan
+  group: Music & words
+  note: "The main collection of my covers and original compositions."
+  featured: true
+- name: SoundCloud · earlier account
+  url: https://soundcloud.com/mdimrul-hassan
+  group: Music & words
+  note: "A second, smaller account; some material overlaps."
+- name: Medium
+  url: https://medium.com/@mihassan
+  group: Music & words
+  note: "Older essays, poems, and technical notes."
+  featured: true
+- name: YouTube
+  url: https://www.youtube.com/channel/UCA2RL3Z6zOXwthg5P1zo9gA
+  group: Music & words
+  note: "Music recordings and curated puzzle videos."
+- name: Flickr
+  url: https://www.flickr.com/people/mihassan
+  group: Images & everyday life
+  note: "A long-running photography archive."
+  featured: true
+- name: Instagram
+  url: https://www.instagram.com/mihassan/
+  group: Images & everyday life
+  note: "Photographs and moments."
+- name: X / Twitter
+  url: https://x.com/mihassan
+  group: Images & everyday life
+  note: "An occasional-use profile, rather than a busy feed."

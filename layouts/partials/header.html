@@ -1,0 +1,22 @@
+<header class="site-header" data-site-header lang="en-US">
+  <div class="site-header__inner shell">
+    <a class="site-brand" href="{{ "/" | relURL }}" aria-label="Md Imrul Hassan — home">
+      <img class="site-brand__mark" src="{{ "images/portfolio/mark.svg" | relURL }}" width="48" height="48" alt="">
+      <span class="site-brand__name">Md Imrul Hassan</span>
+    </a>
+
+    <details class="site-menu" data-site-menu open>
+      <summary aria-label="Toggle primary navigation"><span>Menu</span><i aria-hidden="true"></i></summary>
+      <nav class="site-nav" aria-label="Primary">
+        {{- range .Site.Menus.main -}}
+          {{- $target := .URL | relURL -}}
+          {{- $active := eq $.RelPermalink $target -}}
+          {{- if and (ne $target "/") (hasPrefix $.RelPermalink $target) }}{{ $active = true }}{{ end -}}
+          {{- if and (eq .Identifier "creative") (eq $.Section "poems") }}{{ $active = true }}{{ end -}}
+          {{- if and (eq .Identifier "about") (eq $.RelPermalink "/career/") }}{{ $active = true }}{{ end -}}
+          <a href="{{ $target }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{- end }}
+      </nav>
+    </details>
+  </div>
+</header>

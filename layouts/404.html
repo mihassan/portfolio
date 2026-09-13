@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="not-found shell" aria-labelledby="not-found-title">
+  <img src="{{ "images/portfolio/mark.svg" | relURL }}" width="96" height="96" alt="">
+  <p class="eyebrow">404 · Path not found</p>
+  <h1 id="not-found-title">This trail ends here.</h1>
+  <p>The page may have moved, or the address may not exist. The useful paths are still close by.</p>
+  <div class="button-row"><a class="button button--primary" href="{{ "/" | relURL }}">Return home <span aria-hidden="true">←</span></a><a class="text-link" href="{{ "/work/" | relURL }}">Explore work <span aria-hidden="true">→</span></a></div>
+</section>
+{{ end }}

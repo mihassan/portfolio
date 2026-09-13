@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="research-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Research</span></nav>
+  <header class="page-hero page-hero--research"><p class="eyebrow">{{ .Params.eyebrow }}</p><h1>{{ .Params.heading | default .Title }}</h1><p class="page-hero__dek">{{ .Params.description }}</p></header>
+  <div class="research-intro prose">{{ .Content }}</div>
+  <div class="publication-groups">
+    {{ range (slice "Thesis" "Journal papers" "Book chapter" "Conference papers") }}
+      {{- $kind := . -}}
+      {{- $items := where hugo.Data.publications "kind" $kind -}}
+      {{- if $items }}
+      <section aria-labelledby="pub-{{ $kind | urlize }}"><header><p class="eyebrow">Publication record</p><h2 id="pub-{{ $kind | urlize }}">{{ $kind }}</h2></header>
+        <ol class="publication-list">
+          {{ range $items }}<li id="{{ .id }}"><p class="publication__year">{{ .year }}</p><div><h3>{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3><p class="publication__authors">{{ .authors }}</p><p class="publication__venue">{{ .venue }}</p>{{ if not .url }}<small>Historical bibliography · no confirmed publisher link</small>{{ end }}</div></li>{{ end }}
+        </ol>
+      </section>
+      {{- end }}
+    {{ end }}
+  </div>
+  <aside class="source-note"><strong>About this record</strong><p>DOI links were matched by title and authorship. Older entries without a confirmed publisher record remain listed without a guessed link.</p></aside>
+</section>
+{{ end }}

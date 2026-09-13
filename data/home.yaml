@@ -1,0 +1,32 @@
+hero:
+  eyebrow: "Engineer · Researcher · Maker"
+  intro: >-
+    I build software, untangle puzzles, and make room for music and words.
+    I’m a software engineer at Google with a background in wireless-network research.
+    Outside engineering, I write in Bangla, sing, and look for a different perspective
+    through a camera.
+  primary_label: "Explore my work"
+  secondary_label: "A little about me"
+work:
+  eyebrow: "Selected work"
+  title: "Small tools. Interesting problems."
+  intro: "Independent projects at the meeting point of algorithms, everyday usefulness, and curiosity."
+notes:
+  eyebrow: "Notes from the work"
+  title: "What changed when I looked closer."
+  intro: "Occasional technical reflections on software, search, language, and AI-assisted development—without a publishing schedule."
+research:
+  eyebrow: "From research to practice"
+  title: "A researcher’s questions.\nAn engineer’s hands."
+  intro: >-
+    Before product software, I studied how wireless networks behave when the messages
+    really matter. My PhD at Swinburne explored IEEE 802.11 and DSRC for
+    vehicle-to-vehicle safety communication.
+  publication_id: "thesis-2013"
+creative:
+  eyebrow: "Beyond the terminal"
+  title: "Other ways of paying attention."
+  intro: "Some ideas take the shape of a song, a poem, or a photograph."
+closing:
+  title: "There’s more than one way to say hello."
+  intro: "Code, music, photographs, and the occasional note. Find the part of my world that interests you."

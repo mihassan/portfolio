@@ -1,0 +1,56 @@
+baseURL = 'https://mihassan.com/'
+locale = 'en-US'
+title = 'Md Imrul Hassan'
+theme = 'minimal'
+enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  description = "Software engineer and wireless-networks researcher, with a creative practice spanning Bangla poetry, music and photography."
+  author = "Md Imrul Hassan"
+  tagline = "Engineer · Researcher · Maker"
+  socialImage = "images/portfolio/social-card.png"
+  minHugoVersion = "0.165.0"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "work"
+    name = "Work"
+    url = "/work/"
+    weight = 2
+  [[menu.main]]
+    identifier = "research"
+    name = "Research"
+    url = "/research/"
+    weight = 3
+  [[menu.main]]
+    identifier = "creative"
+    name = "Creative"
+    url = "/creative/"
+    weight = 4
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 5
+  [[menu.main]]
+    identifier = "elsewhere"
+    name = "Elsewhere"
+    url = "/elsewhere/"
+    weight = 6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+  [markup.goldmark.parser]
+    autoHeadingID = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]

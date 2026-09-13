@@ -1,0 +1,113 @@
+- id: thesis-2013
+  kind: Thesis
+  title: "Effect of retransmission on the performance of the IEEE 802.11 MAC protocol for DSRC"
+  authors: "Md Imrul Hassan"
+  year: 2013
+  venue: "Swinburne University of Technology · PhD thesis"
+  url: https://figshare.swinburne.edu.au/articles/thesis/Effect_of_retransmission_on_the_performance_of_the_IEEE_802_11_MAC_protocol_for_DSRC/26263508
+  link_label: "Read the thesis"
+  basis: "Institutional repository; record identified in the prior research pass."
+- id: tvt-2012
+  kind: Journal papers
+  title: "Effect of Retransmissions on the Performance of the IEEE 802.11 MAC Protocol for DSRC"
+  authors: "Md Imrul Hassan, Hai L. Vu, Taka Sakurai, Lachlan L. H. Andrew"
+  year: 2012
+  venue: "IEEE Transactions on Vehicular Technology"
+  url: https://doi.org/10.1109/TVT.2011.2172964
+  basis: "Crossref title/authorship verified 2026-09-11; published January 2012."
+- id: tvt-2011
+  kind: Journal papers
+  title: "Performance Analysis of the IEEE 802.11 MAC Protocol for DSRC Safety Applications"
+  authors: "Md Imrul Hassan, Hai L. Vu, Taka Sakurai"
+  year: 2011
+  venue: "IEEE Transactions on Vehicular Technology"
+  url: https://doi.org/10.1109/TVT.2011.2162755
+  basis: "Crossref title/authorship verified 2026-09-11; published October 2011."
+- id: ieek-2007
+  kind: Journal papers
+  title: "Throughput Capacity of a Wireless Multi-hop Relay Network using Cognitive Radio"
+  authors: "Md Imrul Hassan, Ju Bin Song, Young-il Kim"
+  year: 2007
+  venue: "Journal of the Institute of Electronics Engineers of Korea"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: ieek-2006
+  kind: Journal papers
+  title: "Comparative Adjacent Channel Power Ratio Analysis in an OFDM-RoF Access Link"
+  authors: "A.H.M. Razibul Islam, Md Imrul Hassan, Ju Bin Song"
+  year: 2006
+  venue: "Journal of the Institute of Electronics Engineers of Korea"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: line-2005
+  kind: Journal papers
+  title: "An Improved Algorithm for Scan-converting a Line"
+  authors: "Md Hasanul Kabir, Md Imrul Hassan, Abdullah Azfar"
+  year: 2005
+  venue: "Asian Journal of Information Technology"
+  basis: "Historical first-person bibliography and archived IUT faculty page; no confirmed publisher link."
+- id: chapter-2010
+  kind: Book chapter
+  title: "Medium Access Protocols for Cooperative Collision Avoidance in Vehicular Ad-Hoc Networks"
+  authors: "Md Imrul Hassan, Hai L. Vu, Taka Sakurai"
+  year: 2010
+  venue: "Advances in Vehicular Ad-Hoc Networks: Developments and Challenges"
+  url: https://doi.org/10.4018/978-1-61520-913-2.ch006
+  basis: "Crossref title/authorship verified 2026-09-11; year from historical bibliography."
+- id: vnc-2010
+  kind: Conference papers
+  title: "Effect of Retransmissions on the Performance of the IEEE 802.11 MAC Protocol for DSRC"
+  authors: "Md Imrul Hassan, Hai L. Vu, Taka Sakurai, Lachlan L. H. Andrew, Moshe Zukerman"
+  year: 2010
+  venue: "IEEE Vehicular Networking Conference (VNC)"
+  url: https://doi.org/10.1109/VNC.2010.5698236
+  basis: "Crossref title/authorship verified 2026-09-11."
+- id: wowmom-2010
+  kind: Conference papers
+  title: "Performance Analysis of the IEEE 802.11 MAC Protocol for DSRC with and without Retransmissions"
+  authors: "Md Imrul Hassan, Hai L. Vu, Taka Sakurai"
+  year: 2010
+  venue: "IEEE WoWMoM"
+  url: https://doi.org/10.1109/WOWMOM.2010.5534909
+  basis: "Crossref title/authorship verified 2026-09-11."
+- id: kics-2007
+  kind: Conference papers
+  title: "Throughput per Cell of a Cognitive Radio based Mobile Multi-hop Relay Network"
+  authors: "Md Imrul Hassan, A.H.M. Razibul Islam, Ju Bin Song, Young-il Kim"
+  year: 2007
+  venue: "KICS Summer Conference · Yongpyong"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: ieek-conf-2007
+  kind: Conference papers
+  title: "A Cognitive Radio based Multi-Hop Relay Cellular Network"
+  authors: "Md Imrul Hassan, Ju Bin Song, Young-il Kim"
+  year: 2007
+  venue: "IEEK Summer Conference"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: itcc-location-2007
+  kind: Conference papers
+  title: "Location Estimation in Distributed Ad-Hoc Wireless Sensor Networks"
+  authors: "A.B.M. Tariqul Islam, Md Imrul Hassan, A.H.M. Razibul Islam, Ju Bin Song"
+  year: 2007
+  venue: "International Technical Conference on Circuits/Systems, Computers and Communications · Busan"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: itcc-throughput-2007
+  kind: Conference papers
+  title: "Throughput Capacity of a Cognitive Radio Based Multi-Hop Relay Network"
+  authors: "Md Imrul Hassan, Ju Bin Song, Young-il Kim"
+  year: 2007
+  venue: "International Technical Conference on Circuits/Systems, Computers and Communications · Busan"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: kees-2006
+  kind: Conference papers
+  title: "A New Approach for Enhancing Capacity of WiBro Multi-hop Relay Networks Using Spatial and Spectral Reuse"
+  authors: "Md Imrul Hassan, Mahbub Hassan, Nilimesh Halder, Ju Bin Song"
+  year: 2006
+  venue: "Korea Electromagnetic Engineering Society Conference"
+  basis: "Historical first-person bibliography; no confirmed publisher link."
+- id: apcc-2006
+  kind: Conference papers
+  title: "Next Generation Rural Wireless Connectivity Model for Developing Countries"
+  authors: "A.H.M. Razibul Islam, Rishad Ahmed Shafik, Md Imrul Hassan, Ju Bin Song"
+  year: 2006
+  venue: "Asia-Pacific Conference on Communications · Busan"
+  url: https://doi.org/10.1109/APCC.2006.255919
+  basis: "Crossref title/author sequence verified 2026-09-11; expanded author names from historical bibliography."

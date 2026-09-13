@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="project-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><a href="{{ "/work/" | relURL }}">Work</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
+  <header class="project-hero">
+    <div class="project-hero__copy">
+      <p class="eyebrow">{{ .Params.eyebrow }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.status }}<p class="project-status project-status--hero"><span>Status</span>{{ . }}</p>{{ end }}
+      <p class="page-hero__dek">{{ .Params.description }}</p>
+      {{ if .Params.links }}<div class="button-row project-actions">{{ range .Params.links }}<a class="button button--primary" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}</div>{{ else }}{{ with .Params.external_url }}<a class="button button--primary" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $.Params.external_label | default "Visit project" }} <span aria-hidden="true">↗</span></a>{{ end }}{{ end }}
+    </div>
+    {{ with .Params.image }}<figure><img src="{{ . | relURL }}" width="640" height="400" alt=""><figcaption>Original abstract illustration for this project note.</figcaption></figure>{{ end }}
+  </header>
+  <div class="project-reading">
+    <div class="prose">{{ .Content }}</div>
+    <aside class="project-facts" aria-label="Project facts">
+      <p>Project record</p>
+      {{ with .Params.status }}<dl class="project-facts__list"><div><dt>Status</dt><dd>{{ . }}</dd></div></dl>{{ end }}
+      {{ with .Params.stack }}<ul class="tag-list" aria-label="Project technologies and themes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+      {{ with .Params.links }}<div class="project-facts__links">{{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}</div>{{ end }}
+    </aside>
+  </div>
+  {{- $listedProjects := where .CurrentSection.RegularPages "Params.listed" true -}}
+  {{- $laterProjects := where $listedProjects "Weight" "gt" .Weight -}}
+  <nav class="page-neighbours" aria-label="More projects"><a href="{{ "/work/" | relURL }}">← All projects</a>{{ if .Params.listed }}{{ range first 1 $laterProjects.ByWeight }}<a href="{{ .RelPermalink }}">Next: {{ .Title }} →</a>{{ end }}{{ end }}</nav>
+</article>
+{{ end }}

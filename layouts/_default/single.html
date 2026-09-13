@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="reading-page shell">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
+  <header class="page-hero page-hero--reading">
+    <p class="eyebrow">{{ .Params.eyebrow | default "Note" }}</p>
+    <h1>{{ .Params.heading | default .Title }}</h1>
+    {{ with .Params.description }}<p class="page-hero__dek">{{ . }}</p>{{ end }}
+  </header>
+  <div class="reading-layout">
+    <div class="prose">{{ .Content }}</div>
+    <aside class="reading-rail" aria-label="Continue exploring">
+      <p>Continue exploring</p>
+      <a href="{{ "/work/" | relURL }}">Work <span aria-hidden="true">→</span></a>
+      <a href="{{ "/research/" | relURL }}">Research <span aria-hidden="true">→</span></a>
+      <a href="{{ "/creative/" | relURL }}">Creative <span aria-hidden="true">→</span></a>
+      {{ if eq .RelPermalink "/about/" }}<a href="{{ "/career/" | relURL }}">Career <span aria-hidden="true">→</span></a>{{ else }}<a href="{{ "/about/" | relURL }}">About <span aria-hidden="true">→</span></a>{{ end }}
+    </aside>
+  </div>
+</article>
+{{ end }}

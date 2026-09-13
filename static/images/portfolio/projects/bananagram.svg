@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+<title>Bananagram Solver abstract illustration</title><desc>Rounded tiles form an intersecting grid while a search path moves through them.</desc>
+<rect width="640" height="400" rx="24" fill="#E7EFEB"/>
+<path d="M78 326C145 260 192 284 242 226S346 128 432 164s82 92 151 37" fill="none" stroke="#8FC1B4" stroke-width="28" stroke-linecap="round"/>
+<g fill="#0F5F59">
+<rect x="104" y="139" width="64" height="64" rx="14"/><rect x="168" y="139" width="64" height="64" rx="14"/><rect x="232" y="139" width="64" height="64" rx="14"/><rect x="296" y="139" width="64" height="64" rx="14"/>
+<rect x="232" y="75" width="64" height="64" rx="14"/><rect x="232" y="203" width="64" height="64" rx="14"/><rect x="232" y="267" width="64" height="64" rx="14"/>
+</g>
+<g fill="#F0E9DF"><circle cx="136" cy="171" r="8"/><circle cx="200" cy="171" r="8"/><circle cx="264" cy="107" r="8"/><circle cx="264" cy="171" r="8"/><circle cx="264" cy="235" r="8"/><circle cx="264" cy="299" r="8"/><circle cx="328" cy="171" r="8"/></g>
+<path d="M383 285c43-61 86-82 151-85" fill="none" stroke="#D98462" stroke-width="20" stroke-linecap="round"/><circle cx="535" cy="200" r="16" fill="#D98462"/>
+</svg>

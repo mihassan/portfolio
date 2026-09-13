@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img">
+<title>Haskell on Cloud Run abstract illustration</title><desc>A compact service container sits within a soft cloud boundary with controlled paths in and out.</desc>
+<rect width="640" height="400" rx="24" fill="#F0E9DF"/>
+<path d="M154 285c-47 0-80-30-80-70 0-38 29-67 69-70 15-57 64-91 123-82 37-45 117-35 142 22 62-7 110 32 110 83 34 8 55 32 55 62 0 32-27 55-65 55z" fill="#8FC1B4"/>
+<rect x="209" y="119" width="224" height="166" rx="24" fill="#E8EFEA" stroke="#0F5F59" stroke-width="12"/>
+<rect x="245" y="153" width="152" height="98" rx="14" fill="#0F5F59"/>
+<path d="M275 183h92M275 219h57" stroke="#F0E9DF" stroke-width="12" stroke-linecap="round"/>
+<path d="M42 202h118m320 0h118" fill="none" stroke="#D98462" stroke-width="20" stroke-linecap="round"/>
+<circle cx="160" cy="202" r="15" fill="#D98462"/><circle cx="480" cy="202" r="15" fill="#D98462"/>
+<path d="M321 314v38" stroke="#0F5F59" stroke-width="16" stroke-linecap="round"/>
+</svg>
