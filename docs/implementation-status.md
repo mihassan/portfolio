@@ -2,6 +2,14 @@
 
 Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Work and Notes expansion. Source backups: `../HomePage.backup-before-remediation-20260910` and `../HomePage.backup-before-work-notes-20260913-144812`.
 
+## GitHub verification gate
+
+- Added read-only GitHub Actions verification on pull requests and `main`, with checksum-pinned Hugo 0.165.0, locked deployment tooling, isolated Playwright 1.56.1 Chromium installation and failure screenshot artifacts. No deployment secrets or competing upload workflow are present.
+- Linux CI exposed excessive heading wrapping at 720×500. Measured the heading/button geometry and fixed only the short landscape heading-width constraint; no assertions were weakened. Keyboard testing now uses Tab on the foreground page rather than programmatic focus.
+- Full Linux CI passed at https://github.com/mihassan/portfolio/actions/runs/37300778943 for commit `e6beb9f`: all 41 browser scenarios, static/minified/Workers checks and dependency audit. The updated local macOS gate also passed.
+- Deployed source `e6beb9f` to the existing www Worker as version `bcd7d30c-c53f-4827-b772-370c340871f5`. All 34 live HTTPS routes, required assets/canonicals and designed HTTP 404 passed.
+- Main branch protection is being configured to require pull requests and the GitHub Actions `Portfolio verification` check, with zero mandatory reviewers and administrator bypass retained. Apex redirect and Workers Builds remain pending dashboard access; no Safari or full screen-reader pass is claimed.
+
 ## Custom-domain cutover
 
 - Source commit `40093ee` configures `https://www.mihassan.com/` as the Hugo canonical and the sole Worker Custom Domain. Pinned Hugo 0.165.0 full verification passed: 34 routes, 41 Chromium scenarios, minified poem checks and local Workers routing; production dry run passed.
