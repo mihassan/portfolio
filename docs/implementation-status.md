@@ -10,13 +10,14 @@ Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Wor
 - The former `mihassan-portfolio` Pages project was owner-deleted; its URLs below are historical. The Workers migration is now included in this canonical checkout; its release evidence is recorded next.
 - The remaining sections describe earlier milestones. Their preview processes, URLs and hosting observations must not be treated as current availability.
 
-## Workers release preparation
+## Workers release
 
 - Selectively ported the assets-only deployment configuration from the separate migration workspace, without replacing the newer poems, content or browser checks.
 - Fixed verification isolation: the full gate and standalone Workers build/runtime checks use filtered disposable source copies. A before/after comparison confirmed that every source file and pre-existing generated directory remained unchanged.
 - Pinned Wrangler 4.131.1 with an exact undici 7.29.1 override after the original dependency lock acquired security advisories. A fresh `npm ci` and full `npm audit` passed with zero reported vulnerabilities.
 - Hugo 0.165.0 passed the complete static, minified production/preview canonical, missing-URL rejection, twelve-poem rendering, 39-scenario Chromium and 34-route local Workers gates. `wrangler deploy --dry-run` passed with no bindings.
-- Cloudflare API inspection confirmed the account subdomain `mihassan` and that no Worker named `portfolio` existed before this release. The target is `https://portfolio.mihassan.workers.dev/`; this preparation record alone does not claim a successful upload.
+- Cloudflare API inspection confirmed the account subdomain `mihassan` and that no Worker named `portfolio` existed before this release. Reviewed source commit `68bcf92` was pushed to canonical `main` and deployed to **https://portfolio.mihassan.workers.dev/**. Wrangler uploaded 60 generated files; deployed version: `08b1c00c-5017-48c0-b1bc-afde2ce0cfe6`.
+- Post-deployment HTTPS verification passed: all 34 content routes matched the reviewed production build byte-for-byte, required assets and canonical URLs matched, and an unknown route returned the designed page with HTTP 404. This does not imply a Safari or full screen-reader audit.
 - No custom-domain, DNS, TLS, old GitHub Pages or other Cloudflare application changes are included. Workers Builds/GitHub App integration is not established by a CLI deployment.
 
 ## Work units
