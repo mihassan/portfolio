@@ -7,8 +7,17 @@ Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Wor
 - Twelve poems are now available: ten owner-supplied texts plus the two unchanged legacy files. Body checksums, stanza/line comparisons and archive coverage protect the collection.
 - Creative links to the official recordings of Kal Sara Raat and মায়ার বাঁধন with separate writing, tune and performance credits. No recordings, embeds or external fonts are hosted here.
 - Final verification after the Creative callout correction passed with Hugo 0.165.0 in a disposable source copy: 34 content routes plus the designed 404, 39 Chromium scenarios, and a 49.1 KiB initial homepage payload.
-- Deployment is not part of that verification. The former `mihassan-portfolio` Pages project was owner-deleted; its URLs below are historical. Workers migration work remains separate from this checkout, which has no Wrangler configuration yet.
+- The former `mihassan-portfolio` Pages project was owner-deleted; its URLs below are historical. The Workers migration is now included in this canonical checkout; its release evidence is recorded next.
 - The remaining sections describe earlier milestones. Their preview processes, URLs and hosting observations must not be treated as current availability.
+
+## Workers release preparation
+
+- Selectively ported the assets-only deployment configuration from the separate migration workspace, without replacing the newer poems, content or browser checks.
+- Fixed verification isolation: the full gate and standalone Workers build/runtime checks use filtered disposable source copies. A before/after comparison confirmed that every source file and pre-existing generated directory remained unchanged.
+- Pinned Wrangler 4.131.1 with an exact undici 7.29.1 override after the original dependency lock acquired security advisories. A fresh `npm ci` and full `npm audit` passed with zero reported vulnerabilities.
+- Hugo 0.165.0 passed the complete static, minified production/preview canonical, missing-URL rejection, twelve-poem rendering, 39-scenario Chromium and 34-route local Workers gates. `wrangler deploy --dry-run` passed with no bindings.
+- Cloudflare API inspection confirmed the account subdomain `mihassan` and that no Worker named `portfolio` existed before this release. The target is `https://portfolio.mihassan.workers.dev/`; this preparation record alone does not claim a successful upload.
+- No custom-domain, DNS, TLS, old GitHub Pages or other Cloudflare application changes are included. Workers Builds/GitHub App integration is not established by a CLI deployment.
 
 ## Work units
 

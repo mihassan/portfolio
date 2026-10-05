@@ -118,7 +118,7 @@ class Document(HTMLParser):
                 self.external_blanks.append(attrs)
 
     def handle_data(self, data: str) -> None:
-        if self._in_verse:
+        if self._in_poem and self._in_verse:
             self.poem_stanzas[-1][-1] += data
 
     def handle_endtag(self, tag: str) -> None:
@@ -126,6 +126,7 @@ class Document(HTMLParser):
             self._in_verse = False
         if tag == "div":
             self._in_poem = False
+            self._in_verse = False
         if self._primary_depth:
             self._primary_depth -= 1
 
