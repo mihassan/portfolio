@@ -367,8 +367,11 @@ try {
       }
     }
     if (test.keyboard) {
-      additional.focus = await evaluate(cdp, `(() => {const e=document.querySelector('.skip-link');e.focus();const r=e.getBoundingClientRect();return {tag:document.activeElement.tagName,text:document.activeElement.textContent.trim(),top:r.top,outline:getComputedStyle(e).outlineStyle};})()`);
-      assert(additional.focus.tag === 'A' && additional.focus.top >= 0 && additional.focus.outline !== 'none', `${test.name}: skip link focus treatment failed`);
+      await cdp.send('Page.bringToFront');
+      await cdp.send('Input.dispatchKeyEvent', {type:'keyDown', key:'Tab', code:'Tab', windowsVirtualKeyCode:9});
+      await cdp.send('Input.dispatchKeyEvent', {type:'keyUp', key:'Tab', code:'Tab', windowsVirtualKeyCode:9});
+      additional.focus = await evaluate(cdp, `(() => {const e=document.querySelector('.skip-link');const r=e.getBoundingClientRect();return {isSkipLink:document.activeElement===e,tag:document.activeElement.tagName,text:document.activeElement.textContent.trim(),top:r.top,outline:getComputedStyle(e).outlineStyle};})()`);
+      assert(additional.focus.isSkipLink && additional.focus.tag === 'A' && additional.focus.top >= 0 && additional.focus.outline !== 'none', `${test.name}: skip link focus treatment failed: ${JSON.stringify(additional.focus)}`);
       await evaluate(cdp, `document.activeElement.blur()`);
       await cdp.send('Input.dispatchKeyEvent', { type:'keyDown', key:'Escape', code:'Escape', windowsVirtualKeyCode:27 });
       additional.desktopAfterEscape = await evaluate(cdp, inspectExpression);
