@@ -7,7 +7,8 @@ Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Wor
 - Owner-approved literary framing connects software, puzzles, writing, music and photography through noticing and expression, without psychological claims or invented personal history.
 - Homepage now selects জীর্ণ স্মৃতি, ঘুমকন্যা and চল চলে যাই to show memory, tenderness and movement. About explains the connection with concrete images from the poems; Creative is no longer framed as merely outside engineering.
 - Preserved all poem files, the six-destination navigation, Confluence identity, Work curation and existing responsive design. A real photograph and personal anecdotes remain deferred until the owner supplies a selection and context.
-- Hugo 0.165.0 full verification passed: 34 content routes plus 404, all 39 Chromium scenarios, minified poem preservation and local Workers routing. Desktop/mobile screenshot review found no blocking layout issues. Deployment evidence will be recorded after the live checks.
+- Hugo 0.165.0 full verification passed: 34 content routes plus 404, all 39 Chromium scenarios, minified poem preservation and local Workers routing. Desktop/mobile screenshot review found no blocking layout issues.
+- Source commit `a4ef45d` was pushed to canonical `main` and deployed to https://portfolio.mihassan.workers.dev/ as version `635e6259-b059-4257-863a-c4271aec237e`. All 34 live HTTPS routes matched the reviewed production build byte-for-byte; canonical URLs, required assets and designed HTTP 404 passed. Custom domain and DNS are unchanged.
 
 ## Current poetry and music update
 
