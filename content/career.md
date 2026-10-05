@@ -16,8 +16,6 @@ I graduated **with distinction in Electrical and Electronic Engineering** from t
 
 I joined IUT’s EEE department as a lecturer in 2004. I taught programming, computer fundamentals, electronics and circuits, and co-supervised microcontroller projects involving speech recognition and a learning kit. I also judged a university programming contest in 2004.
 
-The archived university profile establishes the start of this role; I do not assert a precise end date here.
-
 ## 2005 · A bridge into ICT
 
 I completed a **Postgraduate Diploma in ICT** at **Bangladesh University of Engineering and Technology (BUET)**.
@@ -34,7 +32,7 @@ At **Swinburne University of Technology’s Centre for Advanced Internet Archite
 
 ## From 2015 · Product software
 
-I moved into professional software development in 2015 and joined **Google in 2016**. My public biography records work connected with Neighbourly, Kormo Jobs, Task Mate and Google Maps. These are first-person career statements; this site does not describe private systems or internal product details.
+I moved into professional software development in 2015 and joined **Google in 2016**. My work has included Neighbourly, Kormo Jobs, Task Mate and Google Maps.
 
 ## Alongside the day job
 

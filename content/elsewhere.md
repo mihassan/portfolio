@@ -1,7 +1,7 @@
 ---
 title: "Elsewhere"
 heading: "Different places. The same curiosity."
-description: "Confirmed public profiles of Md Imrul Hassan, grouped by code, music, writing and photography."
+description: "Find Md Imrul Hassan's code, music, writing and photography around the web."
 eyebrow: "Find me on the web"
 type: "elsewhere"
 draft: false

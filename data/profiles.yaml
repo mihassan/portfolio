@@ -18,7 +18,7 @@
 - name: Kaggle
   url: https://www.kaggle.com/mihassan
   group: Code & learning
-  note: "My profile; not a showcase of substantial contributions."
+  note: "My Kaggle profile."
 - name: SoundCloud
   url: https://soundcloud.com/mdimrulhassan
   group: Music & words
@@ -49,4 +49,4 @@
 - name: X / Twitter
   url: https://x.com/mihassan
   group: Images & everyday life
-  note: "An occasional-use profile, rather than a busy feed."
+  note: "Occasional posts."

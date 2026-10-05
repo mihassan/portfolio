@@ -9,6 +9,5 @@
       <section aria-labelledby="profile-{{ $group | urlize }}"><h2 id="profile-{{ $group | urlize }}">{{ $group }}</h2><ul>{{ range $items }}<li><a href="{{ .url }}" target="_blank" rel="me noopener noreferrer"><span><strong>{{ .name }}</strong><small>{{ .note }}</small></span><i aria-hidden="true">↗</i></a></li>{{ end }}</ul></section>
     {{ end }}
   </div>
-  <p class="source-note">Only confirmed public profiles are included here. A quiet profile is described as quiet rather than presented as a body of work.</p>
 </section>
 {{ end }}

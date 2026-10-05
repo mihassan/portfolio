@@ -3,6 +3,7 @@ title: "About"
 heading: "Curiosity, in a few different forms."
 description: "The person behind the projects: Md Imrul Hassan, engineer, researcher and creative maker."
 eyebrow: "A little about me"
+portrait: "images/portfolio/profile-ai.webp"
 draft: false
 ---
 
@@ -23,8 +24,6 @@ After teaching and research, I moved into professional software development in 2
 [Read the career story](/career/) or [explore the research](/research/).
 
 ## A few things I return to
-
-These are recurring themes in my work and interests, not a personality test.
 
 ### Understanding systems
 

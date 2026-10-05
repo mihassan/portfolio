@@ -2,6 +2,18 @@
 
 Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Work and Notes expansion. Source backups: `../HomePage.backup-before-remediation-20260910` and `../HomePage.backup-before-work-notes-20260913-144812`.
 
+## Public copy cleanup — local update
+
+- Removed visible editorial scaffolding from Elsewhere, Research, Career, About, Creative, Poems archive and project artwork captions. Simplified profile descriptions and song credits into direct public prose.
+- Retained internal provenance, project maturity/search/speech limitations, AI-assisted project authorship, recording credits and the AI-edited portrait disclosure. All twelve poem files remain untouched.
+- Full verification passed with Hugo 0.165.0: 34 routes plus 404, 41 Chromium scenarios, minified poem checks and Workers routing. Cleanup and portrait changes remain uncommitted and undeployed.
+
+## About portrait — local update
+
+- Added the owner-selected AI-edited portrait on About, with a visible disclosure and descriptive alt text. Local WebP derivative: 710×720, approximately 59 KiB, with metadata removed; original image untouched.
+- Full Hugo 0.165.0/Workers gate passed across 34 content routes and 41 Chromium scenarios, including new 320px and dark About cases. Desktop/mobile screenshot inspection passed. Portrait is not requested by the homepage.
+- This update is local only: not committed, pushed or deployed.
+
 ## Personality-led portfolio refinement
 
 - Owner-approved literary framing connects software, puzzles, writing, music and photography through noticing and expression, without psychological claims or invented personal history.

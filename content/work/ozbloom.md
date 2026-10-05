@@ -23,4 +23,4 @@ This project brings together that curiosity about nature with the pleasure of ma
 
 ## A note on imagery
 
-Illustrative or generated botanical imagery is not a substitute for authoritative identification. The abstract artwork used on this portfolio is decorative, not a photograph or a botanical specimen.
+Illustrative or generated botanical imagery is not a substitute for authoritative identification.

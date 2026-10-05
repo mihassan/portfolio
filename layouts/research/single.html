@@ -10,12 +10,11 @@
       {{- if $items }}
       <section aria-labelledby="pub-{{ $kind | urlize }}"><header><p class="eyebrow">Publication record</p><h2 id="pub-{{ $kind | urlize }}">{{ $kind }}</h2></header>
         <ol class="publication-list">
-          {{ range $items }}<li id="{{ .id }}"><p class="publication__year">{{ .year }}</p><div><h3>{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3><p class="publication__authors">{{ .authors }}</p><p class="publication__venue">{{ .venue }}</p>{{ if not .url }}<small>Historical bibliography · no confirmed publisher link</small>{{ end }}</div></li>{{ end }}
+          {{ range $items }}<li id="{{ .id }}"><p class="publication__year">{{ .year }}</p><div><h3>{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3><p class="publication__authors">{{ .authors }}</p><p class="publication__venue">{{ .venue }}</p></div></li>{{ end }}
         </ol>
       </section>
       {{- end }}
     {{ end }}
   </div>
-  <aside class="source-note"><strong>About this record</strong><p>DOI links were matched by title and authorship. Older entries without a confirmed publisher record remain listed without a guessed link.</p></aside>
 </section>
 {{ end }}

@@ -302,6 +302,11 @@ def main() -> None:
             assert f'/poems/{slug}/' in texts["/"], f"Missing selected homepage poem: {slug}"
         assert 'class="poem-selection"' in texts["/"]
         assert "Different ways of paying attention" in texts["/about/"]
+        assert 'src="/images/portfolio/profile-ai.webp"' in texts["/about/"]
+        assert 'width="710" height="720"' in texts["/about/"]
+        assert "AI-edited portrait of Md Imrul Hassan" in texts["/about/"]
+        assert "<figcaption>AI-edited portrait</figcaption>" in texts["/about/"]
+        assert "profile-ai.webp" not in texts["/"], "Portrait should load only on About"
         for video_id in ["zcOinm_fPwE", "7d8lD5TAwSg"]:
             assert f"https://www.youtube.com/watch?v={video_id}" in texts["/creative/"]
         for credit in ["Md Imrul Hassan", "Parvin Sultana", "Jk Majlish", "SevenTunes Entertainment", "Sazal Roy"]:

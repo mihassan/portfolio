@@ -9,7 +9,7 @@
       <p class="page-hero__dek">{{ .Params.description }}</p>
       {{ if .Params.links }}<div class="button-row project-actions">{{ range .Params.links }}<a class="button button--primary" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}</div>{{ else }}{{ with .Params.external_url }}<a class="button button--primary" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $.Params.external_label | default "Visit project" }} <span aria-hidden="true">↗</span></a>{{ end }}{{ end }}
     </div>
-    {{ with .Params.image }}<figure><img src="{{ . | relURL }}" width="640" height="400" alt=""><figcaption>Original abstract illustration for this project note.</figcaption></figure>{{ end }}
+    {{ with .Params.image }}<figure><img src="{{ . | relURL }}" width="640" height="400" alt=""></figure>{{ end }}
   </header>
   <div class="project-reading">
     <div class="prose">{{ .Content }}</div>

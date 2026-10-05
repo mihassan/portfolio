@@ -26,6 +26,10 @@ Owner-confirmed: **Md Imrul Hassan**. Md abbreviates Muhammad; it is part of the
 | Public profiles | Owner confirmation and earlier cross-link research | Shared data/profiles.yaml; unrelated SoundCloud account and BrandYourself excluded |
 | Personality themes | Owner-approved interpretation of recurring work/interests and the supplied poems | Homepage and About connect noticing, questioning and expression; selected poems show memory, tenderness and movement. This is literary/editorial framing, not a psychological assessment or private biographical inference. No anecdote or owner-selected photograph was invented |
 
+## About portrait
+
+The owner selected `profile_ai.jpg`, an AI-modified portrait, for the About page despite noting that its likeness is imperfect. The local WebP derivative preserves the full composition and strips source metadata. A visible “AI-edited portrait” caption distinguishes it from an unmodified photograph. No other people or reference photos are included.
+
 ## Poem version decisions
 
 The newly supplied **জীর্ণ স্মৃতি** uses `---` where the existing file has an em dash, and puts the final two verse breaks differently. The existing file is intentionally unchanged pending the owner's choice of version. **বেদনার রঙ** matches in wording and punctuation; its existing file is also unchanged. The supplied title is not repeated as a verse line.

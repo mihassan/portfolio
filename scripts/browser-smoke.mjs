@@ -231,6 +231,8 @@ const cases = [
   { name: 'research-desktop', route: '/research/', width: 1440, height: 1000, full: true },
   { name: 'creative-mobile', route: '/creative/', width: 390, height: 844, full: true },
   { name: 'about-desktop', route: '/about/', width: 1440, height: 1000, full: true, keyboard: true },
+  { name: 'about-small', route: '/about/', width: 320, height: 844, full: true },
+  { name: 'about-dark', route: '/about/', width: 390, height: 844, dark: true, full: true },
   { name: 'poem-mobile', route: '/poems/bedonar-rong/', width: 390, height: 844, full: true },
   { name: 'not-found', route: '/definitely-missing/', width: 390, height: 844 },
   { name: 'poems-archive-desktop', route: '/poems/', width: 1440, height: 1000, full: true },

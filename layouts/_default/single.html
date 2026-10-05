@@ -1,10 +1,18 @@
 {{ define "main" }}
 <article class="reading-page shell">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
-  <header class="page-hero page-hero--reading">
-    <p class="eyebrow">{{ .Params.eyebrow | default "Note" }}</p>
-    <h1>{{ .Params.heading | default .Title }}</h1>
-    {{ with .Params.description }}<p class="page-hero__dek">{{ . }}</p>{{ end }}
+  <header class="page-hero page-hero--reading{{ if .Params.portrait }} page-hero--portrait{{ end }}">
+    <div>
+      <p class="eyebrow">{{ .Params.eyebrow | default "Note" }}</p>
+      <h1>{{ .Params.heading | default .Title }}</h1>
+      {{ with .Params.description }}<p class="page-hero__dek">{{ . }}</p>{{ end }}
+    </div>
+    {{ with .Params.portrait }}
+    <figure class="profile-portrait">
+      <img src="{{ . | relURL }}" width="710" height="720" alt="AI-edited portrait of Md Imrul Hassan" decoding="async">
+      <figcaption>AI-edited portrait</figcaption>
+    </figure>
+    {{ end }}
   </header>
   <div class="reading-layout">
     <div class="prose">{{ .Content }}</div>
