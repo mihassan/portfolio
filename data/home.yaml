@@ -1,10 +1,9 @@
 hero:
   eyebrow: "Engineer · Researcher · Maker"
   intro: >-
-    I build software, untangle puzzles, and make room for music and words.
+    I explore patterns in software, puzzles, and the things we remember.
     I’m a software engineer at Google with a background in wireless-network research.
-    Outside engineering, I write in Bangla, sing, and look for a different perspective
-    through a camera.
+    Writing in Bangla, singing, and photography are other ways I pay attention.
   primary_label: "Explore my work"
   secondary_label: "A little about me"
 work:
@@ -24,7 +23,7 @@ research:
     vehicle-to-vehicle safety communication.
   publication_id: "thesis-2013"
 creative:
-  eyebrow: "Beyond the terminal"
+  eyebrow: "Music · Words · Photography"
   title: "Other ways of paying attention."
   intro: "Some ideas take the shape of a song, a poem, or a photograph."
 closing:

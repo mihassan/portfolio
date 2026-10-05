@@ -2,6 +2,13 @@
 
 Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Work and Notes expansion. Source backups: `../HomePage.backup-before-remediation-20260910` and `../HomePage.backup-before-work-notes-20260913-144812`.
 
+## Personality-led portfolio refinement
+
+- Owner-approved literary framing connects software, puzzles, writing, music and photography through noticing and expression, without psychological claims or invented personal history.
+- Homepage now selects জীর্ণ স্মৃতি, ঘুমকন্যা and চল চলে যাই to show memory, tenderness and movement. About explains the connection with concrete images from the poems; Creative is no longer framed as merely outside engineering.
+- Preserved all poem files, the six-destination navigation, Confluence identity, Work curation and existing responsive design. A real photograph and personal anecdotes remain deferred until the owner supplies a selection and context.
+- Hugo 0.165.0 full verification passed: 34 content routes plus 404, all 39 Chromium scenarios, minified poem preservation and local Workers routing. Desktop/mobile screenshot review found no blocking layout issues. Deployment evidence will be recorded after the live checks.
+
 ## Current poetry and music update
 
 - Twelve poems are now available: ten owner-supplied texts plus the two unchanged legacy files. Body checksums, stanza/line comparisons and archive coverage protect the collection.

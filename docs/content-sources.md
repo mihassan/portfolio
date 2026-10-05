@@ -24,7 +24,7 @@ Owner-confirmed: **Md Imrul Hassan**. Md abbreviates Muhammad; it is part of the
 | Kal Sara Raat — কাল সারা রাত | Owner statement and official video description: https://www.youtube.com/watch?v=zcOinm_fPwE | Lyrics and tune: Md Imrul Hassan. Singer: Parvin Sultana. Music: Jk Majlish. Label: SevenTunes Entertainment. Link only; recording/video rights not claimed |
 | মায়ার বাঁধন musical setting | Owner statement and Sazal Roy's video description: https://www.youtube.com/watch?v=7d8lD5TAwSg | Poem: Md Imrul Hassan. Tune and vocals: Sazal Roy. Poem and recording cross-linked; no copied media |
 | Public profiles | Owner confirmation and earlier cross-link research | Shared data/profiles.yaml; unrelated SoundCloud account and BrandYourself excluded |
-| Personality themes | Interpretation of recurring work/interests | Presented on About as themes, not diagnosis or scored traits |
+| Personality themes | Owner-approved interpretation of recurring work/interests and the supplied poems | Homepage and About connect noticing, questioning and expression; selected poems show memory, tenderness and movement. This is literary/editorial framing, not a psychological assessment or private biographical inference. No anecdote or owner-selected photograph was invented |
 
 ## Poem version decisions
 

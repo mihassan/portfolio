@@ -2,11 +2,11 @@
 title: "Creative"
 heading: "Music, words, and ways of seeing."
 description: "The creative work of Md Imrul Hassan: singing, original compositions, Bangla poetry and photography."
-eyebrow: "Beyond the terminal"
+eyebrow: "Other ways of paying attention"
 draft: false
 ---
 
-Some things are easier to understand by making them: singing a song, writing a line, or waiting for the light. These practices have stayed with me alongside engineering.
+Some things are easier to understand by making them: singing a song, writing a line, or waiting for the light. A melody, a poem, and a photograph offer different ways to notice and express something—not every question needs the same kind of answer.
 
 ## Music
 

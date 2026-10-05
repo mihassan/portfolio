@@ -146,7 +146,11 @@ p { margin: 0 0 1rem; }
 .creative-card > a { margin-top: 1.4rem; font-size: 0.82rem; font-weight: 800; }
 .creative-card--poem { background: var(--accent); color: #fffaf4; }
 .creative-card--poem > p:first-child { color: var(--warm-on-accent); }
-.creative-card--poem blockquote { margin: auto 0 1.5rem; font-family: var(--serif); font-size: clamp(1.45rem, 2.5vw, 2.1rem); line-height: 1.55; }
+.poem-selection { list-style: none; margin: 0; padding: 0; }
+.poem-selection li + li { border-top: 1px solid currentColor; }
+.poem-selection a { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 1rem; padding-block: 0.75rem; }
+.poem-selection span[lang="bn"] { font-family: var(--serif); font-size: 1.35rem; overflow-wrap: anywhere; }
+.poem-selection small { font-size: 0.75rem; }
 .creative-card--poem h3 { margin: 0 0 1.4rem; }
 .creative-card--poem a { color: #fffaf4; }
 .closing { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 1.05fr); gap: clamp(3rem, 8vw, 7rem); padding-block: clamp(5rem, 10vw, 9rem); }

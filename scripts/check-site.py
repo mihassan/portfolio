@@ -298,6 +298,10 @@ def main() -> None:
             assert rendered == stanzas, f"{slug}: rendered verse differs from source"
         poem_links = {raw for tag, raw in documents["/poems/"].refs if tag == "a" and raw.startswith("/poems/")}
         assert poem_links == {f"/poems/{slug}/" for slug in POEMS}, "Poem archive is incomplete"
+        for slug in ["jirno-sriti", "ghumkonnya", "chol-chole-jai"]:
+            assert f'/poems/{slug}/' in texts["/"], f"Missing selected homepage poem: {slug}"
+        assert 'class="poem-selection"' in texts["/"]
+        assert "Different ways of paying attention" in texts["/about/"]
         for video_id in ["zcOinm_fPwE", "7d8lD5TAwSg"]:
             assert f"https://www.youtube.com/watch?v={video_id}" in texts["/creative/"]
         for credit in ["Md Imrul Hassan", "Parvin Sultana", "Jk Majlish", "SevenTunes Entertainment", "Sazal Roy"]:

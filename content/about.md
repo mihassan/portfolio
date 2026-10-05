@@ -6,7 +6,13 @@ eyebrow: "A little about me"
 draft: false
 ---
 
-I’m **Md Imrul Hassan**. Most people call me Imrul. I’m a software engineer with roots in electrical engineering and wireless-network research, and a lasting interest in making things outside those disciplines.
+I’m **Md Imrul Hassan**. Most people call me Imrul. I’m a software engineer with roots in electrical engineering and wireless-network research. I also write in Bangla, sing, and take photographs.
+
+## Different ways of paying attention
+
+A puzzle asks me to look for a structure; a photograph asks me to notice what is in front of me. In my poems, a flower kept inside an envelope becomes a way to write about memory, and a path away from the city becomes an invitation to begin again.
+
+These practices do not have to produce the same kind of answer. In software, I test whether an idea works. A poem can leave a question open. This portfolio brings both together: things I build, and things I try to understand by giving them words, a melody, or an image.
 
 ## From radio signals to software
 
@@ -36,9 +42,9 @@ I enjoy small, well-defined products: a solver, a pronunciation tool, a directio
 
 Haskell is a particularly persistent interest. Kotlin, TypeScript, Dart, Ruby and Python offer other ways to express a problem. [GitHub](https://github.com/mihassan) is where many of those experiments live.
 
-### Leaving room for a creative voice
+### Memory, tenderness, and movement
 
-I write poems in Bangla and record songs, including several original compositions. Music and writing give me ways to explore experience that are different from engineering. [Visit the creative collection](/creative/).
+My poems return to more than one mood: the preserved flower in [জীর্ণ স্মৃতি](/poems/jirno-sriti/), the gentle invitation to dream in [ঘুমকন্যা](/poems/ghumkonnya/), and the search for stillness in [চল চলে যাই](/poems/chol-chole-jai/). Music gives those words another form, sometimes in someone else's voice. [Visit the creative collection](/creative/).
 
 ### Looking more closely
 
