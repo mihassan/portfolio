@@ -2,17 +2,24 @@
 
 Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Work and Notes expansion. Source backups: `../HomePage.backup-before-remediation-20260910` and `../HomePage.backup-before-work-notes-20260913-144812`.
 
-## Public copy cleanup — local update
+## Custom-domain cutover
+
+- Source commit `40093ee` configures `https://www.mihassan.com/` as the Hugo canonical and the sole Worker Custom Domain. Pinned Hugo 0.165.0 full verification passed: 34 routes, 41 Chromium scenarios, minified poem checks and local Workers routing; production dry run passed.
+- Replaced only the proxied `www` CNAME to GitHub Pages with the Cloudflare-managed Worker Custom Domain. Deployed version: `d3006d5b-f7e6-4450-9763-43742c768438`. Valid HTTPS checks passed on www: all 34 routes matched the reviewed production build byte-for-byte; portrait/assets, canonicals, sitemap, robots and designed HTTP 404 passed.
+- Removed the old GitHub Pages custom-domain association and disabled its deployment workflow. Its repository/history and tracked legacy CNAME remain archived; re-enabling the old workflow requires deliberately reviewing/removing that legacy domain configuration first.
+- Apex DNS records, email and unrelated subdomain records were not changed. Apex-to-www redirect remains pending because the temporary token lacks redirect-rule access. Workers Builds GitHub connection also requires dashboard setup/approval; automatic deployment has not been established. workers.dev remains a fallback with www canonicals.
+
+## Public copy cleanup
 
 - Removed visible editorial scaffolding from Elsewhere, Research, Career, About, Creative, Poems archive and project artwork captions. Simplified profile descriptions and song credits into direct public prose.
 - Retained internal provenance, project maturity/search/speech limitations, AI-assisted project authorship, recording credits and the AI-edited portrait disclosure. All twelve poem files remain untouched.
-- Full verification passed with Hugo 0.165.0: 34 routes plus 404, 41 Chromium scenarios, minified poem checks and Workers routing. Cleanup and portrait changes remain uncommitted and undeployed.
+- Full verification passed with Hugo 0.165.0: 34 routes plus 404, 41 Chromium scenarios, minified poem checks and Workers routing. Cleanup and portrait changes were committed in `e1913e6` and are included in the verified www release.
 
-## About portrait — local update
+## About portrait
 
 - Added the owner-selected AI-edited portrait on About, with a visible disclosure and descriptive alt text. Local WebP derivative: 710×720, approximately 59 KiB, with metadata removed; original image untouched.
 - Full Hugo 0.165.0/Workers gate passed across 34 content routes and 41 Chromium scenarios, including new 320px and dark About cases. Desktop/mobile screenshot inspection passed. Portrait is not requested by the homepage.
-- This update is local only: not committed, pushed or deployed.
+- Included in the published portfolio at `https://www.mihassan.com/about/`.
 
 ## Personality-led portfolio refinement
 
