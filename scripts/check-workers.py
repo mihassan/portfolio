@@ -40,13 +40,14 @@ def main() -> None:
         "compatibility_date": "2026-09-13",
         "workers_dev": True,
         "preview_urls": True,
+        "routes": [{"pattern": "www.mihassan.com", "custom_domain": True}],
         "assets": {
             "directory": "./public",
             "not_found_handling": "404-page",
             "html_handling": "auto-trailing-slash",
         },
     }, "wrangler.jsonc must remain an assets-only Worker configuration"
-    assert not ({"main", "routes", "route", "vars"} & config.keys())
+    assert not ({"main", "route", "vars"} & config.keys())
     assert "binding" not in config["assets"]
 
     package = load_json(ROOT / "package.json")

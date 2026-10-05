@@ -24,7 +24,7 @@ Open <http://127.0.0.1:1313/>. The explicit loopback bind avoids exposing the de
 ## Build
 
 ```sh
-SITE_BASE_URL=https://portfolio.mihassan.workers.dev/ npm run build
+SITE_BASE_URL=https://www.mihassan.com/ npm run build
 ```
 
 Hugo writes generated output to `public/`. Do not edit or commit that directory; change `content/`, `data/`, `layouts/`, or `static/` instead.
@@ -87,13 +87,13 @@ Review staged files before every commit. Never add private research archives, `.
 
 ## Cloudflare Workers Static Assets
 
-The deployment target is **portfolio**, an assets-only Worker at <https://portfolio.mihassan.workers.dev/>. The account's `mihassan` subdomain was verified through the Cloudflare API; consult `docs/implementation-status.md` for actual release status. Hugo generates `public/`; Wrangler uploads only those assets. There is no Worker script, asset binding, custom-domain route or runtime secret.
+The deployment target is **portfolio**, an assets-only Worker serving <https://www.mihassan.com/>. The workers.dev fallback is <https://portfolio.mihassan.workers.dev/>; consult `docs/implementation-status.md` for actual release status. Hugo generates `public/`; Wrangler uploads only those assets. There is no Worker script, asset binding or runtime secret. The configuration declares only the approved `www.mihassan.com` Custom Domain.
 
 For an explicitly authorised deployment:
 
 ```sh
 npm ci
-SITE_BASE_URL=https://portfolio.mihassan.workers.dev/ npm run build
+SITE_BASE_URL=https://www.mihassan.com/ npm run build
 npx wrangler deploy --dry-run
 npm run deploy
 ```
@@ -110,10 +110,10 @@ CLI deployment does **not** establish automatic deployment on pushes. If connect
 - Build command: `npm run build`.
 - Production deploy command: `npx wrangler deploy`.
 - Non-production deploy command: `npx wrangler versions upload`.
-- Build variables in both environments: `HUGO_VERSION=0.165.0` and `SITE_BASE_URL=https://portfolio.mihassan.workers.dev/`.
+- Build variables in both environments: `HUGO_VERSION=0.165.0` and `SITE_BASE_URL=https://www.mihassan.com/`.
 - Use a narrowly scoped deployment token rather than expanding GitHub App or account permissions indiscriminately. No deployment credentials belong in this repository.
 
-Workers Builds uses Workers-specific metadata, not `CF_PAGES_*` variables. During a separately approved domain cutover, update `SITE_BASE_URL`, rebuild and verify before configuring the custom domain or DNS.
+Workers Builds uses Workers-specific metadata, not `CF_PAGES_*` variables. Both production and preview builds use `https://www.mihassan.com/` as the canonical URL. Non-production uploads must not promote a version or modify production domain routing.
 
 Official references:
 
