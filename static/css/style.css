@@ -273,7 +273,7 @@ p { margin: 0 0 1rem; }
 .profile-groups strong, .profile-groups small { display: block; }
 .profile-groups small { margin-top: 0.25rem; color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
 .profile-groups i { font-style: normal; }
-.poem-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding-bottom: 7rem; }
+.poem-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; padding-bottom: 7rem; }
 .poem-list article { min-height: 15rem; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: var(--radius); background: var(--accent); color: #fffaf4; }
 .poem-list article:nth-child(2) { background: var(--dark); }
 .poem-list p { color: var(--warm-on-accent); font-family: var(--sans); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -283,6 +283,8 @@ p { margin: 0 0 1rem; }
 .poem-hero h1 { font-size: clamp(3.2rem, 7vw, 5.7rem); }
 .poem-body { max-width: 43rem; padding: clamp(2rem, 5vw, 4rem); border-top: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.25rem, 1.12rem + 0.65vw, 1.65rem); line-height: 1.95; }
 .poem-body p { margin: 0 0 2.2rem; }
+.poem-hero h1, .poem-list h2, .poem-body, .poem-page .page-neighbours a { overflow-wrap: anywhere; }
+.poem-recording { max-width: 43rem; padding-bottom: 3rem; }
 .not-found { min-height: 66vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-block: 5rem; }
 .not-found img { margin-bottom: 2rem; }
 .not-found h1 { max-width: 10ch; }

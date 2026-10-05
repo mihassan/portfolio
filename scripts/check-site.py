@@ -15,6 +15,20 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+POEMS = {
+    "jirno-sriti": [3, 3, 4],
+    "bedonar-rong": [4, 4, 4],
+    "kal-jochona": [7],
+    "ghumkonnya": [5],
+    "ei-borshay-projapotir-pakhay": [4, 4, 4],
+    "ekhon-pochish": [4, 4],
+    "opekkha": [4, 4],
+    "mayar-badhon": [4, 4],
+    "smriti": [1] * 16,
+    "hemonte-brishti": [6],
+    "chol-chole-jai": [4, 4, 4, 4, 4],
+    "kon-ek-diner-kotha": [4, 4],
+}
 ROUTES = [
     "/",
     "/work/",
@@ -38,9 +52,7 @@ ROUTES = [
     "/career/",
     "/elsewhere/",
     "/poems/",
-    "/poems/jirno-sriti/",
-    "/poems/bedonar-rong/",
-]
+] + [f"/poems/{slug}/" for slug in POEMS]
 REQUIRED_ASSETS = {
     "/favicon.ico", "/apple-touch-icon.png",
     "/images/portfolio/favicon.svg", "/images/portfolio/favicon-32x32.png",
@@ -67,9 +79,19 @@ class Document(HTMLParser):
         self.work_project_slugs: list[str] = []
         self.note_entry_slugs: list[str] = []
         self._primary_depth = 0
+        self.poem_stanzas: list[list[str]] = []
+        self._in_poem = False
+        self._in_verse = False
 
     def handle_starttag(self, tag: str, attrs_list: list[tuple[str, str | None]]) -> None:
         attrs = {key: value or "" for key, value in attrs_list}
+        if tag == "div" and attrs.get("class") == "poem-body":
+            self._in_poem = True
+        if self._in_poem and tag == "p":
+            self.poem_stanzas.append([""])
+            self._in_verse = True
+        if self._in_verse and tag == "br":
+            self.poem_stanzas[-1].append("")
         if "id" in attrs:
             self.ids.add(attrs["id"])
         if attrs.get("data-project-slug"):
@@ -95,7 +117,15 @@ class Document(HTMLParser):
             if attrs.get("target") == "_blank":
                 self.external_blanks.append(attrs)
 
+    def handle_data(self, data: str) -> None:
+        if self._in_verse:
+            self.poem_stanzas[-1][-1] += data
+
     def handle_endtag(self, tag: str) -> None:
+        if tag == "p":
+            self._in_verse = False
+        if tag == "div":
+            self._in_poem = False
         if self._primary_depth:
             self._primary_depth -= 1
 
@@ -148,7 +178,7 @@ def main() -> None:
         assert "WARN" not in result.stdout + result.stderr, "Hugo emitted warnings"
 
         html_files = sorted(build.rglob("*.html"))
-        assert len(html_files) == 25, f"Expected 24 content routes + 404, got {len(html_files)} HTML files"
+        assert len(html_files) == len(ROUTES) + 1, f"Expected {len(ROUTES)} content routes + 404, got {len(html_files)} HTML files"
         assert not (build / "categories").exists() and not (build / "tags").exists(), "Empty taxonomies were generated"
         for route in ROUTES + ["/404.html"]:
             assert route_file(build, route).is_file(), f"Missing route: {route}"
@@ -248,16 +278,32 @@ def main() -> None:
         person = json.loads(person_match.group(1))
         assert person["@type"] == "Person" and person["name"] == "Md Imrul Hassan"
         assert "honorificPrefix" not in person
-        for poem_route in ["/poems/jirno-sriti/", "/poems/bedonar-rong/"]:
+        for poem_route in [f"/poems/{slug}/" for slug in POEMS]:
             assert '<html lang="bn">' in texts[poem_route][:100]
             assert '<header class="site-header" data-site-header lang="en-US">' in texts[poem_route]
             assert '<footer class="site-footer" lang="en-US">' in texts[poem_route]
             assert '<meta property="og:locale" content="bn_BD">' in texts[poem_route]
 
         expected = json.loads((ROOT / "docs/poem-checksums.json").read_text())
+        assert set(expected) == {f"{slug}.md" for slug in POEMS}, "Poem checksum coverage differs"
+        assert {p.stem for p in (ROOT / "content/poems").glob("*.md") if p.stem != "_index"} == set(POEMS)
         for name, digest in expected.items():
             body = (ROOT / "content/poems" / name).read_bytes().split(b"---", 2)[2]
             assert hashlib.sha256(body).hexdigest() == digest, f"Poem body changed: {name}"
+            slug = Path(name).stem
+            stanzas = [part.splitlines() for part in body.decode().strip().split("\n\n")]
+            assert [len(stanza) for stanza in stanzas] == POEMS[slug], f"{slug}: stanza structure changed"
+            rendered = documents[f"/poems/{slug}/"].poem_stanzas
+            assert rendered == stanzas, f"{slug}: rendered verse differs from source"
+        poem_links = {raw for tag, raw in documents["/poems/"].refs if tag == "a" and raw.startswith("/poems/")}
+        assert poem_links == {f"/poems/{slug}/" for slug in POEMS}, "Poem archive is incomplete"
+        for video_id in ["zcOinm_fPwE", "7d8lD5TAwSg"]:
+            assert f"https://www.youtube.com/watch?v={video_id}" in texts["/creative/"]
+        for credit in ["Md Imrul Hassan", "Parvin Sultana", "Jk Majlish", "SevenTunes Entertainment", "Sazal Roy"]:
+            assert credit in texts["/creative/"], f"Missing recording credit: {credit}"
+        assert "https://www.youtube.com/watch?v=7d8lD5TAwSg" in texts["/poems/mayar-badhon/"]
+        assert "/poems/mayar-badhon/" in texts["/creative/"]
+        assert all("<iframe" not in text and "escaped fixture" not in text for text in texts.values())
 
         for svg in (ROOT / "static/images/portfolio").rglob("*.svg"):
             ET.parse(svg)

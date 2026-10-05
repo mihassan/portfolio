@@ -63,7 +63,7 @@ The checks do not validate external destinations, production DNS/TLS, social-pla
 - Identity proof: `docs/identity-proof.html`
 - Poem body checksums: `docs/poem-checksums.json`
 
-Both Bangla poem bodies are intentionally preserved. Presentation and front matter may change, but run the checks before modifying their body text.
+The twelve Bangla poem bodies are protected by checksums. The two legacy poem files remain unchanged. Poetry is rendered as escaped plain verse, not Markdown: each newline is a verse break and each blank line separates paragraphs/stanzas. Put recording credits in front matter, outside the verse body. Do not correct spelling or punctuation without the owner's approval; run the checks before changing poem text.
 
 ## License
 

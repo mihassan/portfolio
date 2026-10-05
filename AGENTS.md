@@ -18,7 +18,8 @@ local changes are committed, pushed or deployed.
 ## Content and design
 - Preserve the letter-free Confluence identity, existing routes, accessibility,
   responsive behavior, dark mode and no-JavaScript usability.
-- Preserve both Bengali poem bodies byte-for-byte; validate their checksums.
+- Preserve all twelve Bengali poem bodies and validate their checksums. Keep the
+  two legacy poem files byte-for-byte unchanged unless the owner approves a replacement.
 - Keep exactly eight curated Work projects and the three selected homepage
   projects. Legacy unlisted routes must remain accessible.
 - Separate owner assertions, public evidence and interpretation.

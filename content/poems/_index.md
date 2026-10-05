@@ -6,6 +6,8 @@ eyebrow: "Writing"
 draft: false
 ---
 
-Two poems about memory and feeling, kept in the language in which they were written. The texts are preserved from my earlier website.
+Twelve poems about memory, longing, rain and the pull of the natural world, kept in the language in which they were written. Ten poems join two preserved from my earlier website.
+
+One of them, [মায়ার বাঁধন](/poems/mayar-badhon/), has also been set to music and performed by Sazal Roy.
 
 [More writing and music](/creative/#writing).

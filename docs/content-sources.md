@@ -20,9 +20,17 @@ Owner-confirmed: **Md Imrul Hassan**. Md abbreviates Muhammad; it is part of the
 | Phonetiq speech boundary | Public source at https://github.com/mihassan/phonetiq and owner assessment | Audio is uploaded for Workers AI recognition; no on-device-only or reliable pronunciation-assessment claim. Active development remains below the owner’s usefulness threshold |
 | Technical Notes | Project evidence and owner-confirmed development context | Three first-person Notes expose limitations and attribution; they do not imply a publication schedule, independent validation or production readiness |
 | Original songs vs covers | Recording descriptions on the two owner-confirmed SoundCloud accounts | Identified original compositions; no downloaded audio or copyrighted lyrics |
-| Poetry | The two existing local files | Original bodies preserved, checksums in poem-checksums.json |
+| Poetry | Ten poems supplied directly by the owner in conversation, plus the two existing local files | Original wording and punctuation retained; verse lines and clear stanza divisions transcribed for reading. Inter-line copy/paste padding is not treated as a separate stanza except in স্মৃতি, whose evenly spaced lines are retained. No composition dates invented; body checksums in poem-checksums.json |
+| Kal Sara Raat — কাল সারা রাত | Owner statement and official video description: https://www.youtube.com/watch?v=zcOinm_fPwE | Lyrics and tune: Md Imrul Hassan. Singer: Parvin Sultana. Music: Jk Majlish. Label: SevenTunes Entertainment. Link only; recording/video rights not claimed |
+| মায়ার বাঁধন musical setting | Owner statement and Sazal Roy's video description: https://www.youtube.com/watch?v=7d8lD5TAwSg | Poem: Md Imrul Hassan. Tune and vocals: Sazal Roy. Poem and recording cross-linked; no copied media |
 | Public profiles | Owner confirmation and earlier cross-link research | Shared data/profiles.yaml; unrelated SoundCloud account and BrandYourself excluded |
 | Personality themes | Interpretation of recurring work/interests | Presented on About as themes, not diagnosis or scored traits |
+
+## Poem version decisions
+
+The newly supplied **জীর্ণ স্মৃতি** uses `---` where the existing file has an em dash, and puts the final two verse breaks differently. The existing file is intentionally unchanged pending the owner's choice of version. **বেদনার রঙ** matches in wording and punctuation; its existing file is also unchanged. The supplied title is not repeated as a verse line.
+
+## Publication boundaries
 
 No volatile metrics are presented as permanent achievements. Unknown details are omitted or qualified. New artwork is abstract illustration, not purported photography, product UI or a scientific personality map. Bounded solver outcomes are not presented as proofs of impossibility, and repository test records are not described as tests personally executed by the owner.
 

@@ -2,6 +2,14 @@
 
 Approved scope: the completion plan dated 2026-09-11 plus the owner-approved Work and Notes expansion. Source backups: `../HomePage.backup-before-remediation-20260910` and `../HomePage.backup-before-work-notes-20260913-144812`.
 
+## Current poetry and music update
+
+- Twelve poems are now available: ten owner-supplied texts plus the two unchanged legacy files. Body checksums, stanza/line comparisons and archive coverage protect the collection.
+- Creative links to the official recordings of Kal Sara Raat and মায়ার বাঁধন with separate writing, tune and performance credits. No recordings, embeds or external fonts are hosted here.
+- Final verification after the Creative callout correction passed with Hugo 0.165.0 in a disposable source copy: 34 content routes plus the designed 404, 39 Chromium scenarios, and a 49.1 KiB initial homepage payload.
+- Deployment is not part of that verification. The former `mihassan-portfolio` Pages project was owner-deleted; its URLs below are historical. Workers migration work remains separate from this checkout, which has no Wrangler configuration yet.
+- The remaining sections describe earlier milestones. Their preview processes, URLs and hosting observations must not be treated as current availability.
+
 ## Work units
 
 1. **Complete — Content, routes and data**

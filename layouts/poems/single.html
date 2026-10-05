@@ -2,7 +2,21 @@
 <article class="poem-page shell">
   <nav class="breadcrumb" aria-label="Breadcrumb" lang="en"><a href="{{ "/" | relURL }}">Home</a><span aria-hidden="true">/</span><a href="{{ "/poems/" | relURL }}">Poems</a><span aria-hidden="true">/</span><span aria-current="page">{{ .Title }}</span></nav>
   <header class="poem-hero" lang="bn"><p class="eyebrow" lang="en">Original Bangla poem</p><h1>{{ .Title }}</h1></header>
-  <div class="poem-body" lang="bn">{{ .Content }}</div>
+  {{- /* Poems are plain verse: escape the text and retain explicit line breaks. */ -}}
+  {{- $verse := replace .RawContent "\r\n" "\n" | strings.TrimSpace -}}
+  {{- $verse = replaceRE "\n[\t ]*\n(?:[\t ]*\n)*" "\n\n" $verse -}}
+  <div class="poem-body" lang="bn">
+    {{- range split $verse "\n\n" -}}
+    <p>{{ range $index, $line := split . "\n" }}{{ if $index }}<br>{{ end }}{{ $line }}{{ end }}</p>
+    {{- end -}}
+  </div>
+  {{ with .Params.recording_url }}
+  <aside class="poem-recording prose" aria-label="Musical setting" lang="en">
+    <h2>Set to music</h2>
+    {{ with $.Params.recording_credit }}<p>{{ . }}</p>{{ end }}
+    <p><a href="{{ . }}">Listen on YouTube <span aria-hidden="true">↗</span></a></p>
+  </aside>
+  {{ end }}
   <nav class="page-neighbours" aria-label="More poems" lang="en"><a href="{{ "/poems/" | relURL }}">← All poems</a>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ else }}{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}{{ end }}</nav>
 </article>
 {{ end }}

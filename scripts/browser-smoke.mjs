@@ -182,6 +182,8 @@ const inspectExpression = `(() => {
   };
 })()`;
 
+const poemSlugs = Object.keys(JSON.parse(await fs.readFile(path.join(SOURCE, 'docs/poem-checksums.json'), 'utf8')))
+  .map((name) => name.replace(/\.md$/, ''));
 const routes = [
   '/',
   '/work/',
@@ -205,8 +207,7 @@ const routes = [
   '/career/',
   '/elsewhere/',
   '/poems/',
-  '/poems/jirno-sriti/',
-  '/poems/bedonar-rong/',
+  ...poemSlugs.map((slug) => `/poems/${slug}/`),
 ];
 const cases = [
   { name: 'home-desktop', route: '/', width: 1440, height: 1000, full: true },
@@ -232,6 +233,14 @@ const cases = [
   { name: 'about-desktop', route: '/about/', width: 1440, height: 1000, full: true, keyboard: true },
   { name: 'poem-mobile', route: '/poems/bedonar-rong/', width: 390, height: 844, full: true },
   { name: 'not-found', route: '/definitely-missing/', width: 390, height: 844 },
+  { name: 'poems-archive-desktop', route: '/poems/', width: 1440, height: 1000, full: true },
+  { name: 'poems-archive-small', route: '/poems/', width: 320, height: 844, full: true },
+  { name: 'poem-long-title-small', route: '/poems/ei-borshay-projapotir-pakhay/', width: 320, height: 844, full: true },
+  { name: 'poem-long-lines-dark', route: '/poems/opekkha/', width: 320, height: 844, dark: true, full: true },
+  { name: 'poem-song-no-js', route: '/poems/mayar-badhon/', width: 390, height: 844, noJS: true, full: true },
+  ...poemSlugs.filter((slug) => slug !== 'bedonar-rong').map((slug) => ({
+    name: `poem-${slug}-mobile`, route: `/poems/${slug}/`, width: 390, height: 844, full: true,
+  })),
 ];
 
 const report = [];
@@ -303,7 +312,19 @@ try {
     }
     if (test.name === 'home-desktop') assert(initial.pageHeight <= 7200, `desktop homepage is too long: ${initial.pageHeight}`);
     if (test.name === 'home-mobile') assert(initial.pageHeight <= 9200, `mobile homepage is too long: ${initial.pageHeight}`);
-    if (test.noJS || test.blockJS) assert(initial.mainTextLength > 1000, `${test.name}: failed/disabled JS hid content`);
+    if (test.route === '/' && (test.noJS || test.blockJS)) assert(initial.mainTextLength > 1000, `${test.name}: failed/disabled JS hid content`);
+    if (test.route === '/poems/') {
+      const poemCount = await evaluate(cdp, `document.querySelectorAll('.poem-list article').length`);
+      assert(poemCount === 12, `${test.name}: expected twelve poem cards, got ${poemCount}`);
+    }
+    if (test.route === '/poems/mayar-badhon/') {
+      const recording = await evaluate(cdp, `(() => {
+        const section = document.querySelector('.poem-recording');
+        return { href: section?.querySelector('a')?.href, credit: section?.textContent, verse: document.querySelector('.poem-body')?.textContent };
+      })()`);
+      assert(recording.href === 'https://www.youtube.com/watch?v=7d8lD5TAwSg' && recording.credit.includes('Sazal Roy'), `${test.name}: missing recording link or credit`);
+      assert(!recording.verse.includes('Sazal Roy'), `${test.name}: recording credit leaked into verse`);
+    }
 
     const additional = {};
     if (test.name === 'home-desktop' || test.name === 'home-dark') {
