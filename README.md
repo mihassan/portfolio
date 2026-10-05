@@ -54,6 +54,8 @@ npm run verify
 
 The full gate runs in disposable source copies. It includes static and browser checks, the assets-only Workers configuration/lockfile contract, production and preview canonical URLs, minified poem preservation, missing-URL rejection, and a loopback-only `wrangler dev` routing/404 smoke test. It does not deploy. Standalone Workers checks also build from disposable copies. Set `WRANGLER_PATH` to an absolute executable path if dependencies are installed outside this checkout.
 
+GitHub Actions runs `.github/workflows/verify.yml` on pull requests and pushes to `main`. It installs checksum-pinned Hugo, the locked npm tooling and a pinned Chromium test installer, then runs the full gate and dependency audit. It has read-only repository permissions and no deployment credentials; Cloudflare Workers Builds remains the intended deployment pipeline.
+
 The checks do not validate external destinations, production DNS/TLS, social-platform cache behaviour, Safari, or a full screen-reader/WCAG audit. Those require post-deployment or manual verification; they are not implied by a passing local build.
 
 ## Content maintenance

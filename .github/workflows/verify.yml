@@ -1,0 +1,55 @@
+name: Verify portfolio
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Portfolio verification
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      WRANGLER_SEND_METRICS: "false"
+      QA_DIR: ${{ runner.temp }}/portfolio-qa
+      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/portfolio-browsers
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install pinned Hugo
+        shell: bash
+        run: |
+          set -euo pipefail
+          tools="$RUNNER_TEMP/portfolio-tools"
+          mkdir -p "$tools"
+          curl --fail --location --retry 3 \
+            https://github.com/gohugoio/hugo/releases/download/v0.165.0/hugo_0.165.0_linux-amd64.tar.gz \
+            -o "$tools/hugo.tar.gz"
+          echo "5c3a37a5450b3e386e5b75a87a790fea2d04a796d75e171216c80ef48a32b432  $tools/hugo.tar.gz" | sha256sum --check
+          tar -xzf "$tools/hugo.tar.gz" -C "$tools" hugo
+          echo "$tools" >> "$GITHUB_PATH"
+      - name: Install locked deployment tooling
+        run: npm ci
+      - name: Install test browser outside repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/portfolio-browser-tool" --no-save --no-audit --no-fund playwright@1.56.1
+          "$RUNNER_TEMP/portfolio-browser-tool/node_modules/.bin/playwright" install --with-deps chromium
+          node -e 'const {chromium} = require(process.env.RUNNER_TEMP + "/portfolio-browser-tool/node_modules/playwright"); console.log("CHROME_PATH=" + chromium.executablePath())' >> "$GITHUB_ENV"
+      - name: Verify site and local Worker
+        run: npm run verify
+      - name: Check dependency advisories
+        run: npm audit
