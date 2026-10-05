@@ -178,6 +178,15 @@ const inspectExpression = `(() => {
     images,
     heroImage: box(document.querySelector('.hero__visual img')),
     fontSize: parseFloat(getComputedStyle(document.body).fontSize),
+    heroLayout: (() => {
+      const details = (selector) => {
+        const element = document.querySelector(selector);
+        if (!element) return null;
+        const style = getComputedStyle(element);
+        return {box: box(element), fontFamily: style.fontFamily, fontSize: style.fontSize, lineHeight: style.lineHeight, maxWidth: style.maxWidth, marginTop: style.marginTop, paddingTop: style.paddingTop};
+      };
+      return {scrollY, header: details('.site-header'), hero: details('.hero'), heading: details('.hero h1'), intro: details('.hero__intro'), actions: details('.hero .button-row')};
+    })(),
     focusOutline: document.activeElement ? getComputedStyle(document.activeElement).outlineStyle : null
   };
 })()`;
@@ -308,7 +317,7 @@ try {
     if (test.width >= 900) assert(initial.menu.visible && initial.menu.box.width > 300, `${test.name}: desktop primary navigation is not visible`);
     if (test.route === '/') {
       assert(initial.heading.text === 'Md Imrul Hassan', `${test.name}: homepage h1 must be full name`);
-      if (test.width >= 390) assert(initial.cta && initial.cta.bottom <= initial.viewport.height, `${test.name}: primary CTA is below initial viewport`);
+      if (test.width >= 390) assert(initial.cta && initial.cta.bottom <= initial.viewport.height, `${test.name}: primary CTA is below initial viewport: ${JSON.stringify({viewport: initial.viewport, cta: initial.cta, layout: initial.heroLayout})}`);
       else assert(initial.cta && initial.cta.width > 0, `${test.name}: primary CTA is not rendered`);
       assert(initial.heroImage && Math.abs(initial.heroImage.width / initial.heroImage.height - 4 / 3) < 0.03, `${test.name}: hero art ratio distorted`);
     }
